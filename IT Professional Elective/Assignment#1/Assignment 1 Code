@@ -1,42 +1,60 @@
-import android.app.Activity;
-import android.os.Bundle;
-import android.util.Log;
+import android.app.Activity;   // Base class for all Activities (a screen in the app)
+import android.os.Bundle;      // Used to pass/save data between Activity states
+import android.util.Log;       // For printing logs (useful to trace lifecycle events)
 
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("Lifecycle", "onCreate");
+        super.onCreate(savedInstanceState);  
+        // First method called when Activity is created → good for initialization (UI, variables)
+
+        Log.d("Lifecycle", "onCreate");  
+        // Prints log to know when onCreate() runs
     }
 
     @Override
     protected void onStart() {
-        super.onStart();
-        Log.d("Lifecycle", "onStart");
+        super.onStart();  
+        // Called when Activity becomes visible to the user
+
+        Log.d("Lifecycle", "onStart");  
+        // Log to confirm visibility state
     }
 
     @Override
     protected void onResume() {
-        super.onResume();
-        Log.d("Lifecycle", "onResume");
+        super.onResume();  
+        // Called when Activity comes to the foreground (ready for user interaction)
+
+        Log.d("Lifecycle", "onResume");  
+        // Log to confirm interactive state
     }
 
     @Override
     protected void onPause() {
-        super.onPause();
-        Log.d("Lifecycle", "onPause");
+        super.onPause();  
+        // Called when another Activity comes in front (current one goes to background)
+
+        Log.d("Lifecycle", "onPause");  
+        // Log to confirm pause state
     }
 
     @Override
     protected void onStop() {
-        super.onStop();
-        Log.d("Lifecycle", "onStop");
+        super.onStop();  
+        // Called when Activity is no longer visible
+
+        Log.d("Lifecycle", "onStop");  
+        // Log to confirm stopped state
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
-        Log.d("Lifecycle", "onDestroy");
+        super.onDestroy();  
+        // Called before Activity is destroyed (closed or killed by system)
+
+        Log.d("Lifecycle", "onDestroy");  
+        // Log to confirm destroyed state
     }
 }
